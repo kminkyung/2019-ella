@@ -1,0 +1,117 @@
+/* 공통사항 */
+.wrap {
+	width: 100%;
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+/* Header */
+.top-banner {
+	background-color: #ffe8e8;
+	position: relative;
+	text-align: center;
+	color: #b05d5d;
+	font-size: 0.75rem;
+	padding: 0.5rem 0;
+}
+
+.top-banner .fa-times {
+	float: right;
+	margin-top: 0.25rem;
+	cursor: pointer;
+}
+
+.top-icons {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 0.75rem;
+	padding: 1rem 0;
+}
+
+	.top-icons>div {
+		margin-left: 1rem;
+
+	}
+
+	.langs,
+	.currency {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	.langs *,
+	.currency * {
+		padding-right: 0.25rem;
+	}
+	.langs .fa-angle-down,
+	.currency .fa-angle-down {
+		color: #666;
+	}
+	.langs>ul,
+	.currency>ul {
+		position: absolute;
+		background-color: #fff;
+		padding: 0.5rem;
+		top: 18px;
+		display: none;
+	}
+
+	.langs>ul>li,
+	.currency>ul>li {
+		display: flex;
+		padding: 0.25rem 0;
+		align-items: center;
+	}
+
+	.langs img,
+	.currency img {
+		width: 18px;
+	}
+
+	.schs {
+		background-color: #f1f1f1;
+		padding: 0.25rem;
+		border-bottom: 1px solid #ccc;
+		position: relative;
+	}
+	.schs input {
+		background-color: transparent;
+		outline-color: transparent;
+		width: 130px;
+		padding-left: 0.5rem;
+	}
+	.schs button {
+		padding: 0 0.5rem;
+		outline-color: transparent;
+		background-color: transparent;
+	}
+	.sch-layer {
+		width: 500px;
+		padding: 1rem;
+		border: 1px solid #eee;
+		background-color: #fff;
+		position: absolute;
+		right: 0;
+		top: 30px;
+	}
+	.sch-layer .tit {
+		color: #333;
+		padding: 0.25rem 0;
+		border-bottom: 1px solid #ccc;
+		font-weight: bold;
+		margin-bottom: 1rem;
+	}
+	.sch-layer .tags {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+	.sch-layer .tag {
+		padding: 0.5rem;
+		background-color: #eee;
+		color: #bbb;
+		margin: 0.25rem;
+	}
