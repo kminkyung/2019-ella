@@ -70,6 +70,8 @@
 		width: 18px;
 	}
 
+	/* 상단 서치바와 서치레이어 */
+
 	.schs {
 		background-color: #f1f1f1;
 		padding: 0.25rem;
@@ -108,10 +110,83 @@
 		justify-content: flex-start;
 		align-items: flex-start;
 		flex-wrap: wrap;
+		margin-bottom: 1rem;
 	}
 	.sch-layer .tag {
 		padding: 0.5rem;
 		background-color: #eee;
 		color: #bbb;
 		margin: 0.25rem;
+	}
+	.sch-layer .prds {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	.sch-layer .prd {
+		flex: 33% 0 0;
+		padding: 0 0.5rem;
+	}
+	.sch-layer .prd > li {
+		margin-bottom: 0.5rem;
+	}
+	.sch-layer .prd-tit, 
+	.sch-layer .prd-price {
+		font-weight: bold;
+	}
+	.sch-layer .prd-refs {
+		display: flex;
+		align-items: center;
+	}
+	.sch-layer .prd-ref:not(:last-child) {
+		width: 24px;
+		height: 24px;
+		overflow: hidden;
+		border: 1px solid #ccc;
+		border-radius: 50%;
+		padding: 0.35rem;
+		margin-right: 0.25rem;
+	}
+
+	.top-links {
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.75rem;
+	}
+	.top-links > .logo {
+		width: 100px;
+	}
+	.top-link > .desc {
+		font-weight: bold;
+		text-align: right;
+	}
+	.top-link > .bts {
+		display: flex;
+		margin-top: 0.5rem;
+		align-items: center;
+	}
+	.top-link > .bts > li {
+		margin-left: 1rem;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+	.top-link > .bts > li > * {
+		margin-left: 0.5rem;
+	}
+	.top-link .rnd-cnt {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: #ffdbdb;
+		text-align: center;
+	}
+	.top-link .underbar:hover > div {
+		width: 100%;
+	}
+	.top-link .underbar > div {
+		border-bottom: 1px solid #333;
+		width: 0;
+		transition: all 0.5s;
 	}
