@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>ELLA WEBSITE</title>
+	<title>ELLA 웹사이트</title>
 	<link rel="stylesheet" href="../css/fa.min.css">
 	<link rel="stylesheet" href="../css/animate.css">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -15,56 +15,64 @@
 	<script src="../js/popper.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/imagesloaded.pkgd.min.js"></script>
+	<script src="../js/masonry.pkgd.min.js"></script>
 	<script src="../js/wow.min.js"></script>
 </head>
 
 <body>
 	<header>
 		<div class="top-banner">
-			<div class="wrap">MID-SEASON SALE UP TO 70% OFF. SHOP NOW
-				<i class="fas fa-times"></i>
+			<div class="wrap">
+				MID-SEASON SALE UP TO 70% OFF. SHOP NOW
+				<div class="fas fa-times"></div>
 			</div>
 		</div>
 		<div class="top-icons wrap">
 			<div>Customer Service +018 900 6690</div>
 			<div class="langs">
 				<img src="../img/i-lang-1.png" alt="영어">
-				<span>ENG</span><i class="fas fa-angle-down"></i>
+				<span>ENG</span>
+				<i class="fas fa-angle-down"></i>
 				<ul>
 					<li>
 						<img src="../img/i-lang-1.png" alt="영어">
-						<span>ENG</span><i class="fas fa-angle-down"></i>
+						<span>ENG</span>
 					</li>
 					<li>
 						<img src="../img/i-lang-2.png" alt="독일어">
-						<span>GER</span><i class="fas fa-angle-down"></i>
+						<span>GER</span>
 					</li>
 				</ul>
 			</div>
 			<div class="currency">
-				<img src="../img/i-currency-1.png" alt="달러">
-				<span>USD</span><i class="fas fa-angle-down"></i>
+				<img src="../img/i-lang-1.png" alt="달러">
+				<span>ENG</span>
+				<i class="fas fa-angle-down"></i>
 				<ul>
 					<li>
+						<img src="../img/i-currency-1.png" alt="달러">
+						<span>USD</span>
+					</li>
+					<li>
 						<img src="../img/i-currency-2.png" alt="유로">
-						<span>EUR</span><i class="fas fa-angle-down"></i>
+						<span>EURO</span>
 					</li>
 					<li>
 						<img src="../img/i-currency-3.png" alt="파운드">
-						<span>GBP</span><i class="fas fa-angle-down"></i>
+						<span>GBP</span>
 					</li>
 					<li>
-						<img src="../img/i-currency-4.png" alt="Chad프랑..">
-						<span>CHF</span><i class="fas fa-angle-down"></i>
+						<img src="../img/i-currency-4.png" alt="프랑">
+						<span>CHF</span>
 					</li>
 				</ul>
 			</div>
 			<div class="schs">
-				<form action="/sch_main" method="POST" name="schForm" onsubmit="return false;">
+				<form action="/sch_main" method="post" name="schForm" onsubmit="return false;">
 					<input type="text" name="schTxt" class="sch-txt" placeholder="Search">
 					<button type="submit" class="sch-bt"><i class="fas fa-search"></i></button>
 				</form>
-				<div class="sch-layer d-none">
+				<div class="sch-layer">
 					<div class="sch-trending">
 						<div class="tit">TRENDING</div>
 						<ul class="tags">
@@ -75,13 +83,19 @@
 						</ul>
 					</div>
 					<div class="sch-popular">
-						<div class="tit">POPUAR PRODUCTS</div>
+						<div class="tit">POPULAR PRODUCTS</div>
 						<div class="prds">
 							<ul class="prd">
-								<li class="prd-img"><img src="../img/list-img6.jpg" class="img"></li>
+								<li class="prd-img"><img src="../img/list-img4.jpg" class="img"></li>
 								<li class="prd-tit">Tomorrow</li>
-								<li class="prd-desc">Dinterdum pretium<br>condimento</li>
-								<li class="prd-star"><i class="fas fa-star"></i><i class="far fa-star"></i></li>
+								<li class="prd-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+								<li class="prd-star">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+								</li>
 								<li class="prd-price">$36.99</li>
 								<li class="prd-refs">
 									<div class="prd-ref">
@@ -100,10 +114,16 @@
 								</li>
 							</ul>
 							<ul class="prd">
-								<li class="prd-img"><img src="../img/list-img6.jpg" class="img"></li>
+								<li class="prd-img"><img src="../img/list-img4.jpg" class="img"></li>
 								<li class="prd-tit">Tomorrow</li>
-								<li class="prd-desc">Dinterdum pretium<br>condimento</li>
-								<li class="prd-star"><i class="fas fa-star"></i><i class="far fa-star"></i></li>
+								<li class="prd-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+								<li class="prd-star">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+								</li>
 								<li class="prd-price">$36.99</li>
 								<li class="prd-refs">
 									<div class="prd-ref">
@@ -122,10 +142,16 @@
 								</li>
 							</ul>
 							<ul class="prd">
-								<li class="prd-img"><img src="../img/list-img6.jpg" class="img"></li>
+								<li class="prd-img"><img src="../img/list-img4.jpg" class="img"></li>
 								<li class="prd-tit">Tomorrow</li>
-								<li class="prd-desc">Dinterdum pretium<br>condimento</li>
-								<li class="prd-star"><i class="fas fa-star"></i><i class="far fa-star"></i></li>
+								<li class="prd-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+								<li class="prd-star">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+								</li>
 								<li class="prd-price">$36.99</li>
 								<li class="prd-refs">
 									<div class="prd-ref">
@@ -149,19 +175,20 @@
 			</div>
 		</div>
 		<div class="top-links wrap">
-			<div class="logo"><img src="../img/ella-logo-black.jpg" class="img"></div>
-
+			<div class="logo">
+				<img src="../img/ella-logo-black.jpg" class="img">
+			</div>
 			<div class="top-link">
 				<div class="desc">FREE SHIPPING ON ALL ORDERS. NO MINIMUM PURCHASE</div>
 				<ul class="bts">
 					<li>
-						<img src="../img/cart.svg" style="width: 26px;">
+						<img src="../img/shop-bag2.svg" style="width: 26px;">
 						<span>Shopping Cart</span>
 						<span class="rnd-cnt">0</span>
 					</li>
 					<li>
 						<i class="fas fa-heart"></i>
-						<span class="underbar">My Wishlists</span>
+						<span class="underbar">My Wish Lists</span>
 					</li>
 					<li>
 						<span class="underbar">Sign In</span>
@@ -171,115 +198,450 @@
 				</ul>
 			</div>
 		</div>
-		<div class="top-navis">
+		<ul class="top-navis">
 			<ul class="top-navi wrap">
 				<li class="navi underbar">
 					<span>NEW IN</span>
-					<div class="subs">
+					<div class="subs d-none">
 						<div class="sub wrap grid-two">
 							<div class="sub-navi">
-								<ul class="">
+								<ul>
 									<li class="tit">LOREM DORUS</li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
-									<li><a href="#" class="underbar">Gravidas</a></li>
 								</ul>
-								<ul class="">
+								<ul>
 									<li class="tit">LOREM DORUS</li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
-									<li><a href="#" class="underbar">Gravidas</a></li>
 								</ul>
-								<ul class="">
+								<ul>
 									<li class="tit">LOREM DORUS</li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
-									<li><a href="#" class="underbar">Gravidas</a></li>
 								</ul>
-								<ul class="">
+								<ul>
 									<li class="tit">LOREM DORUS</li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
-									<li><a href="#" class="underbar">Gravidas</a></li>
 								</ul>
-								<ul class="">
+								<ul>
 									<li class="tit">LOREM DORUS</li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
-									<li><a href="#" class="underbar">Gravidas</a></li>
 								</ul>
-								<ul class="">
+								<ul>
 									<li class="tit">LOREM DORUS</li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
 									<li><a href="#" class="underbar">Gravidas</a></li>
-									<li><a href="#" class="underbar">Gravidas</a></li>
 								</ul>
-							</div> <!-- sub-navi -->
-							<div class="sub-ads1">
-									<div>
-										<img src="../img/mega-style-2.jpg" class="img">
-										<img src="../img/mega-style-2-2.jpg" class="img">
-									</div>
-									<div>
-										<img src="../img/mega-style-2-3.jpg" class="img">
-									</div>
-								</div> <!-- sub-ads1 -->
-						</div> <!-- sub / grid-two -->
-					</div> <!-- subs -->
+
+							</div>
+							<div class="sub-ad1">
+								<div>
+									<img src="../img/mega-style-2.jpg" class="img">
+									<img src="../img/mega-style-2-2.jpg" class="img">
+								</div>
+								<div>
+									<img src="../img/mega-style-2-3.jpg" class="img">
+								</div>
+							</div>
+						</div>
+					</div>
 				</li>
 				<li class="navi underbar">
 					<span>TREND</span>
+					<div class="subs d-none">
+						<div class="sub wrap grid-two">
+							<div class="sub-navi">
+								<ul>
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul>
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul>
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul>
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul>
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul>
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+							</div>
+							<div class="sub-ad2">
+								<div>
+									<ul class="prd">
+										<li class="prd-tit">FEATURED PRODUCTS</li>
+										<li class="prd-img">
+											<img src="../img/list-img4.jpg" class="img">
+											<div>Sale</div>
+										</li>
+										<li class="prd-desc">
+											French connection<br>
+											Lorem ipsum, dolor
+										</li>
+										<li class="prd-price">
+											<span>$99.99</span>
+											<span>from</span>
+											<span>$36.99</span>
+										</li>
+										<li class="prd-star">
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="fas fa-star"></i>
+											<i class="far fa-star"></i>
+											<i class="far fa-star"></i>
+										</li>
+										<li class="prd-opts">
+											<span>SELECT OPTIONS</span>
+										</li>
+									</ul>
+								</div>
+								<div class="prd-banner">
+									<img src="../img/mega-style-1.jpg" class="img">
+								</div>
+							</div>
+						</div>
+					</div>
 				</li>
 				<li class="navi underbar">
 					<span class="position-relative">
 						COLLECTIONS
-						<div class="tip" style="background-color:#e96759;">
-							Sale
-						</div>
+						<div class="tip" style="background-color: #ef6454;">SALE</div>
 					</span>
+					<div class="subs d-none">
+						<div class="sub wrap grid-card">
+							<ul>
+								<li class="prd-tit">LOREM DE DORUS</li>
+								<li class="prd-img">
+									<img src="../img/mega-style-3-1.jpg" class="img" alt="이미지1">
+								</li>
+								<li class="prd-links">
+									<ul>
+										<li class="sub-navi"><a href="#" class="underbar">Millano</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Paris</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">New York</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Sanfran Cisco</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Seoul</a></li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li class="prd-tit">LOREM DE DORUS</li>
+								<li class="prd-img">
+									<img src="../img/mega-style-3-2.jpg" class="img" alt="이미지1">
+								</li>
+								<li class="prd-links">
+									<ul>
+										<li class="sub-navi"><a href="#" class="underbar">Millano</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Paris</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">New York</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Sanfran Cisco</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Seoul</a></li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li class="prd-tit">LOREM DE DORUS</li>
+								<li class="prd-img">
+									<img src="../img/mega-style-3-3.jpg" class="img" alt="이미지1">
+								</li>
+								<li class="prd-links">
+									<ul>
+										<li class="sub-navi"><a href="#" class="underbar">Millano</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Paris</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">New York</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Sanfran Cisco</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Seoul</a></li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li class="prd-tit">LOREM DE DORUS</li>
+								<li class="prd-img">
+									<img src="../img/mega-style-3-4.jpg" class="img" alt="이미지1">
+								</li>
+								<li class="prd-links">
+									<ul>
+										<li class="sub-navi"><a href="#" class="underbar">Millano</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Paris</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">New York</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Sanfran Cisco</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Seoul</a></li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li class="prd-tit">LOREM DE DORUS</li>
+								<li class="prd-img">
+									<img src="../img/mega-style-3-5.jpg" class="img" alt="이미지1">
+								</li>
+								<li class="prd-links">
+									<ul>
+										<li class="sub-navi"><a href="#" class="underbar">Millano</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Paris</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">New York</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Sanfran Cisco</a></li>
+										<li class="sub-navi"><a href="#" class="underbar">Seoul</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</li>
-				<li class="navi underbar">
+				<li class="navi underbar rel">
 					<span>LOOKBOOK</span>
+					<ul class="subs subs-local d-none">
+						<li>Lookbook Default</li>
+						<li>Lookbook Custom</li>
+					</ul>
 				</li>
 				<li class="navi underbar">
 					<span class="position-relative">
 						DEMO
-						<div class="tip" style="background-color:#06bfe2;">
-							New</div>
+						<div class="tip" style="background-color: #06bfe2;">NEW</div>
 					</span>
+					<div class="subs d-none">
+						<div class="sub wrap grid-masonry">
+							<div class="sub-navi grid-wrap">
+								<div class="grid-sizer"></div>
+								<ul class="grid-item">
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul class="grid-item">
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul class="grid-item">
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul class="grid-item">
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul class="grid-item">
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul class="grid-item">
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+								<ul class="grid-item">
+									<li class="tit">LOREM DORUS</li>
+									<li><a href="#" class="underbar">Gravidas</a></li>
+								</ul>
+							</div>
+							<div class="sub-ad3">
+								<div class="prd-banner">
+									<img src="../img/mega-style-4.jpg" class="img">
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="navi underbar rel">
+					<span>PAGES</span>
+					<ul class="subs subs-local d-none">
+						<li>Lookbook Default</li>
+						<li>Lookbook Custom</li>
+					</ul>
+				</li>
+				<li class="navi underbar rel">
+					<span>BLOG</span>
+					<ul class="subs subs-local d-none">
+						<li>Lookbook Default</li>
+						<li>Lookbook Custom</li>
+					</ul>
 				</li>
 				<li class="navi underbar">
-					<span class="position-relative">
-						PAGES
-						<div class="tip" style="background-color:#feb64a;">
-							Hot</div>
-					</span>
+					<span>BRENDS</span>
 				</li>
-				<li class="navi underbar"><span>BLOG</span></li>
-				<li class="navi underbar"><span>BRANDS</span></li>
-				<li class="navi underbar"><span>FAQS</span></li>
+				<li class="navi underbar">
+					<span>FAQS</span>
+				</li>
 			</ul>
-
-		</div>
+		</ul>
 	</header>
+	<main>
+		<section class="main-bans">
+			<ul class="main-ban">
+				<li>
+					<img src="../img/slide-img/slideshow-1-compressor.jpg" alt="메인배너" class="img">
+					<ul class="ban-conts">
+						<li class="ban-tit">COSMOPOLIS</li>
+						<li class="ban-bar"></li>
+						<li class="ban-cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+							consectetur adipisicing elit.</li>
+						<li class="ban-bt">
+							<span class="bt-ban-link bt-rev">SHOP THE COLLECTION</span>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<img src="../img/slide-img/slideshow-2-compressor.jpg" alt="메인배너" class="img">
+				</li>
+				<li>
+					<img src="../img/slide-img/slideshow-3-compressor.jpg" alt="메인배너" class="img">
+					<ul class="ban-conts">
+						<li class="ban-tit">COSMOPOLIS</li>
+						<li class="ban-bar"></li>
+						<li class="ban-cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+							consectetur adipisicing elit.</li>
+						<li class="ban-bt">
+							<span class="bt-ban-link bt-rev">SHOP THE COLLECTION</span>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="pager-prev">&lt;</div>
+			<div class="pager-next">&gt;</div>
+		</section>
+	</main>
+	<section class="bests wrap">
+		<ul class="best-items">
+			<li class="best-item">
+				<img src="../img/home-3-collections-1-compressor_300x_crop_center.jpg" alt="best" class="img">
+				<div class="underbar">SUITO</div>
+			</li>
+			<li class="best-item">
+				<img src="../img/home-3-collections-2-compressor_300x_crop_center.jpg" alt="best" class="img">
+				<div class="underbar">SUITO</div>
+			</li>
+			<li class="best-item">
+				<img src="../img/home-3-collections-3-compressor_300x_crop_center.jpg" alt="best" class="img">
+				<div class="underbar">SUITO</div>
+			</li>
+			<li class="best-item">
+				<img src="../img/home-3-collections-4-compressor_300x_crop_center.jpg" alt="best" class="img">
+				<div class="underbar">SUITO</div>
+			</li>
+			<li class="best-item">
+				<img src="../img/home-3-collections-5-compressor_300x_crop_center.jpg" alt="best" class="img">
+				<div class="underbar">SUITO</div>
+			</li>
+		</ul>
+		<div class="best-prev">&lt;</div>
+		<div class="best-next">&gt;</div>
+	</section>
+	<section class="sellers">
+		<div class="seller-items">
+			<div class="seller-imgs">
+				<img src="../img/home-3-featured-1-compressor_800x.jpg" alt="ad" class="img">
+				<ul class="seller-conts">
+					<li class="seller-tit">#CAMPAIGNS</li>
+					<li class="seller-slogan">SPRING SUMMER’19</li>
+					<li class="seller-cont">Phasellus lorem malesuada ligula pulvinar de cosmopolis
+					</li>
+					<li class="seller-bt">
+						<span class="bt-rev invert">SHOP NOW</span>
+					</li>
+				</ul>
+			</div>
+			<div class="seller-prds">
+
+			</div>
+		</div>
+	</section>
 	<script src="../js/main.js"></script>
 </body>
 
