@@ -57,6 +57,8 @@ img {
 .rel {position: relative;}
 .fix {position: fixed;}
 
+.pointer {cursor: pointer;}
+
 /* form 요소 */
 .ins {
 	padding: 8px;
