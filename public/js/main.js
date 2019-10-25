@@ -2,7 +2,9 @@
 // 상단 배너 가리기
 var topClose = $.cookie("top-banner-close");
 if(topClose) $(".top-banner").hide();
-
+$("body").click(function(){
+$(".sch-layer").hide();
+});
 
 /* header */
 /* header의 x 버튼 클릭 */
@@ -22,15 +24,26 @@ $("#bt-top-close").click(function(){
 });
 
 // 언어, 통화 선택
-$(".sel-top .fa-angle-down").click(function(){
+$(".sel-top .fa-angle-down").click(function(e){
+	e.stopPropagation();
 	$(this).next().stop().slideToggle(300);
 	$(this).toggleClass("fa-angle-down fa-angle-up");
 });
 
-$(".sel-top li").click(function(){
+$(".sel-top li").click(function(e){
+	e.stopPropagation();
 	$(this).parent().parent().children(".sel-top-img").attr("src", $(this).children("img").attr("src"));
 	$(this).parent().parent().children(".sel-top-txt").text($(this).children("span").text());
 	$(this).parent().prev().trigger("click");
+});
+
+// Search
+$(".sch-txt").click(function(e){
+	e.stopPropagation();
+	$(".sch-layer").show();
+})
+$(".sch-layer").click(function(){
+	e.stopPropagation();
 });
 
 // 메인 네비게이션
