@@ -65,6 +65,71 @@ $(".navi-show").mouseleave(function(){
 });
 
 // 배너 (fade, slide(전체), slide(하나씩), slide(세로))
+// 메인 배너
+(function(){
+	var now = 0;
+	var arr = [];
+	var $li = $(".main-ban").children();
+	var len = $li.length;
+	var speed = 500;
+	var delay = 3000;
+	var interval;
+	init();
+	interval = setInterval(ani, delay, "-200%");
+
+	function init() {
+		arr = [];
+		// prev
+		/* 		if(now == 0) arr.push(len - 1);
+		else arr.push(now - 1) */
+		/* 		if(now == 0) arr[0] = len - 1;
+		else arr[0] = now - 1;
+		*/
+		// next
+		/* 		if(now == len - 1) arr.push(0);
+		else arr.push(now+1); */
+
+		arr[0] = (now == 0) ? len - 1 : now - 1 ; 
+		arr[1] = now; // now
+		arr[2] = (now == len - 1) ? arr[2] = 0 : arr[2] = now + 1 //next
+
+
+		// animation이 끝나면 일어나는 일
+		$(".main-ban").empty(); // $li도 빌까? 비지 않는다.
+		$(".main-ban").append($li[arr[0]]);
+		$(".main-ban").append($li[arr[1]]);
+		$(".main-ban").append($li[arr[2]]);
+		$(".main-ban").css({"left":"-100%"});
+	}
+
+	function ani(tar) {
+		$(".main-ban").stop().animate({"left": tar}, speed, function(){
+			if(tar == 0) {
+				if(now == 0) now = len -1;
+				else now--;
+			}
+			else{
+				if(now == len -1) now = 0;
+				else now++;
+			}
+			init();
+		});
+	}
+	$(".pager-prev").click(function(){
+		ani(0);
+	});
+	$(".pager-next").click(function(){
+		ani("-200%");
+	});
+	$(".main-bans").mouseover(function(){
+		clearInterval(interval);
+	}).mouseleave(function(){
+		clearInterval(interval);
+		interval = setInterval(ani, delay, "-200%");
+	})
+})();
+
+
 
 var $grid = $('.grid-wrap').imagesLoaded(function() {
   $grid.masonry({
@@ -73,3 +138,4 @@ var $grid = $('.grid-wrap').imagesLoaded(function() {
 		percentPosition: true
 	})
 });
+
