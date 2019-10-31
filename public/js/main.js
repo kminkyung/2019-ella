@@ -68,7 +68,7 @@ var mainBanner = new FxSlide({
 	speed: 1000,
 	delay: 4000,
 	pager: $(".pagers"),
-	// autoplay: false
+	autoplay: true
 });
 var bestBanner = new FxSlide({
 	slides: $(".best-items"), 

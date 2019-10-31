@@ -23,6 +23,7 @@ var slide1 = new FxSlide(obj);
 var FxSlide = (function(){
 	function FxSlide(obj) {
 		this.now = 0;
+		this.isAni = false;
 		this.slides = $(obj.slides);
 		this.prev = obj.prev ? $(obj.prev) : $(".pager-prev");
 		this.next = obj.next ? $(obj.next) : $(".pager-next");
@@ -46,10 +47,12 @@ var FxSlide = (function(){
 	}
 	FxSlide.prototype.startInit = function(obj) {
 		obj.prev.click(function(e){
+			if(obj.isAni) return false;
 			obj.dir = 0;
 			obj.ani(obj);
 		});
 		obj.next.click(function(e){
+			if(obj.isAni) return false;
 			obj.dir = -1;
 			obj.ani(obj);
 		});
@@ -63,6 +66,7 @@ var FxSlide = (function(){
 		}
 		if(obj.pagers) {
 			obj.pager.click(function(){
+				if(obj.isAni) return false;
         obj.now = $(this).index();
         obj.pager.removeClass("active");
         $(this).addClass("active");
@@ -86,8 +90,9 @@ var FxSlide = (function(){
 		for(i in this.arr) this.slides.append($(this.slide[this.arr[i]]).clone());
 		this.slides.css({"width": this.width+"%", "left": -this.tar + "%"});
 	}
-	FxSlide.prototype.ani = function(obj, clickChk) {
-    if(!clickChk) {
+	FxSlide.prototype.ani = function(obj, isClick) {
+		obj.isAni = true;
+    if(!isClick) {
       if(obj.dir == 0) (obj.now == 0) ? obj.now = obj.len - 1 : obj.now--;
       else (obj.now == obj.len - 1) ? obj.now = 0 : obj.now++;
       if(obj.pager) {
@@ -96,6 +101,7 @@ var FxSlide = (function(){
       }
     }
     obj.slides.stop().animate({"left": (obj.dir * obj.tar * 2) + "%"}, obj.speed, function(){
+			obj.isAni = false;
 			obj.dir = obj.direction;
 			obj.init();
 		});

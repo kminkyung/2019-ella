@@ -786,6 +786,7 @@ body {
 	font-family: 'Poppins', sans-serif;
 	opacity: 0;
 	transition: opacity 1s;
+	cursor: pointer;
 }
 
 .main-bans>.pager-prev {
@@ -859,6 +860,9 @@ body {
 	position: relative;
 }
 
+.best-wrap {
+	overflow: hidden;
+}
 .best-items {
 	display: flex;
 	justify-content: space-between;
