@@ -62,15 +62,14 @@ $(".navi-show").mouseleave(function(){
 });
 
 // fx-slide : 메인 배너
-var mainBanner = new FxSlide({
+new FxSlide({
 	slides: $(".main-ban"), 
 	cnt: 1, 
 	speed: 1000,
 	delay: 4000,
-	pager: $(".pagers"),
-	autoplay: true
+	pager: $(".pagers")
 });
-var bestBanner = new FxSlide({
+new FxSlide({
 	slides: $(".best-items"), 
 	cnt: 5, 
 	prev: $("#best-prev"),
@@ -78,20 +77,58 @@ var bestBanner = new FxSlide({
 	direction: "toRight",
 	autoplay: false
 });
-var sellerBanner = new FxSlide({
+new FxSlide({
 	slides: $("#seller-slide"), 
 	cnt: 3, 
 	prev: $("#seller-prev"),
 	next: $("#seller-next"),
 });
-var sellerBanner2 = new FxSlide({
+new FxSlide({
 	slides: $("#seller-slide2"), 
 	cnt: 3, 
 	prev: $("#seller-prev2"),
 	next: $("#seller-next2"),
 	direction: "toRight"
 });
+new FxSlide({
+	slides: $("#choice-wrap"), 
+	cnt: 5, 
+	prev: $("#choice-prev"),
+	next: $("#choice-next")
+});
+new FxSlide({
+	slides: $("#choice-wrap1"), 
+	cnt: 5, 
+	prev: $("#choice-prev1"),
+	next: $("#choice-next1")
+});
+new FxSlide({
+	slides: $("#choice-wrap2"), 
+	cnt: 5, 
+	prev: $("#choice-prev2"),
+	next: $("#choice-next2")
+});
+new FxSlide({
+	slides: $(".brand-items"), 
+	cnt: 5, 
+	prev: $("#brand-prev"),
+	next: $("#brand-next"),
+	direction: "toRight"
+});
+new FxSlide({
+	slides: $(".insta-items"), 
+	cnt: 5, 
+	prev: $("#insta-prev"),
+	next: $("#insta-next"),
+});
 
+$(".choice-navi").click(function(){
+	var num = $(this).index();
+	$(".choice-navi").removeClass("active");
+	$(this).addClass("active");
+	$(".choice-wrap").hide();
+	$(".choice-wrap").eq(num).show();
+});
 
 
 // 배너 - (fade, slide(전체), slide(하나씩), slide(세로))

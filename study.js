@@ -1,0 +1,24 @@
+const express = require("express");
+const app = express();
+const path = require("path");
+app.listen(3001, () => {
+  console.log("http://127.0.0.1:3001");
+})
+
+// [JS] 문자열을 배열로 - split()
+var str = "010-8332-8040";
+var tel = str.split("-");
+
+console.log(tel);
+
+
+// [JS] 배열을 문자열로 = join();
+var str2 = tel.join("-");
+
+console.log(str2);
+
+
+// [express]의 [path]에 대해 알아보자
+console.log(__dirname);
+
+console.log(path.join(__dirname, "public"));

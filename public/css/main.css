@@ -5,6 +5,7 @@
 html,
 body {
 	font-family: 'Lato', sans-serif;
+	height: 10000px;
 }
 
 .wrap {
@@ -70,6 +71,7 @@ body {
 .common-items {
 	display: flex;
 	justify-content: space-between;
+	position: relative;
 }
 
 .common-items>.common-item {
@@ -81,13 +83,10 @@ body {
 
 .common-items.five>.common-item {
 	flex: 20% 0 1;
-	margin: 0 1%;
-	text-align: center;
-	font-size: 0.75rem;
 }
 
 .common-img {
-	position: relative
+	position: relative;
 }
 
 .common-img>img {
@@ -102,6 +101,20 @@ body {
 	opacity: 0;
 }
 
+.common-img>ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	opacity: 0;
+	transition: all 1s;
+}
+
 .common-img:hover>.img-def {
 	opacity: 0;
 }
@@ -114,26 +127,13 @@ body {
 	opacity: 1;
 }
 
-.common-img>ul {
-	opacity: 0;
-	transition: all 1s;
-	position: absolute;
-	top: 0;
-	left: 0%;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	text-align: center;
-}
-
 .common-img>ul>li {
 	margin-top: 1rem;
 }
 
 .common-img .heart {
 	width: 24px;
+	height: 24px;
 	background-color: #ffe5e5;
 	color: #232323;
 	line-height: 24px;
@@ -145,7 +145,7 @@ body {
 	border: 1px solid #232323;
 }
 
-.common-img .starts {
+.common-img .stars {
 	margin-bottom: 2rem;
 }
 
@@ -156,10 +156,11 @@ body {
 
 .common-img .size {
 	width: 24px;
-	margin: 0 0.25rem;
+	height: 24px;
 	line-height: 24px;
 	border-radius: 50%;
-	height: 24px;
+	margin: 0 0.25rem;
+	color: #232323;
 	background-color: #f9f9f9;
 	transition: all 0.5s;
 	border: 1px solid #ccc;
@@ -216,7 +217,7 @@ body {
 	border-radius: 50%;
 	overflow: hidden;
 	padding: 2px;
-	border: 1px solid #eee;
+	border: 1px solid #ccc;
 	margin: 0 0.25rem;
 }
 
@@ -263,14 +264,14 @@ body {
 }
 
 .best-prev {
-	left: -15px;
+	left: 0;
 }
 
 .best-next {
-	right: -15px;
+	right: 0;
 }
 
-/* 제목에 라인주기 */
+/* 제목에 사이드 라인 주기 */
 .line-tit {
 	border-bottom: 1px solid #ccc;
 	font-size: 1.25rem;
@@ -294,8 +295,8 @@ body {
 
 /* 이미지 커지고 투명해지고 어두워지고 */
 .hover-img {
-	background-color: #000;
 	overflow: hidden;
+	background-color: #000;
 }
 
 .hover-img>img {
@@ -306,6 +307,8 @@ body {
 	opacity: 0.7;
 	transform: scale(1.2);
 }
+
+
 
 /* Header */
 .top-banner {
@@ -364,7 +367,7 @@ body {
 	padding: 0.5rem;
 	top: 18px;
 	display: none;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .langs>ul>li,
@@ -372,7 +375,6 @@ body {
 	display: flex;
 	padding: 0.25rem 0;
 	align-items: center;
-
 }
 
 /* 상단 서치바와 서치레이어 */
@@ -539,13 +541,14 @@ body {
 	color: #333;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 	z-index: 9999;
-	opacity: 0;
 	visibility: hidden;
+	opacity: 0;
 }
 
 .top-navis .navi-under .subs {
 	top: 143px;
 }
+
 
 .top-navis .subs .underbar:after {
 	border-color: #007bff;
@@ -756,7 +759,7 @@ body {
 /* 메인 배너 */
 .main-bans {
 	position: relative;
-	overflow: hidden;
+	overflow: hidden
 }
 
 .main-ban {
@@ -801,6 +804,7 @@ body {
 .main-bans:hover>.pager-next {
 	opacity: 1;
 }
+
 .main-bans .pagers {
 	position: absolute;
 	bottom: 30px;
@@ -810,6 +814,7 @@ body {
 	right: 0;
 	margin: auto;
 }
+
 .main-bans .pager {
 	padding: 0.25rem;
 	cursor: pointer;
@@ -817,9 +822,11 @@ body {
 	font-size: 1.25rem;
 	transition: color 1s;
 }
+
 .main-bans .pager.active {
 	color: #f03;
 }
+
 
 .ban-conts {
 	position: absolute;
@@ -861,16 +868,20 @@ body {
 }
 
 .best-wrap {
+	position: relative;
 	overflow: hidden;
 }
+
 .best-items {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
+	position: relative;
 }
 
 .best-item {
-	flex: 18% 0 1;
+	flex: 20% 0 1;
+	margin: 0 1%;
 	position: relative;
 	background-color: #111;
 	overflow: hidden;
@@ -905,7 +916,6 @@ body {
 }
 
 
-
 /* BEST SELLERS */
 .sellers {
 	border-top: 1px solid #ddd;
@@ -913,15 +923,15 @@ body {
 }
 
 .sellers.invert {
-	margin-top: 0;
+	margin-top: 0rem;
 	border-top: none;
 	border-bottom: 1px solid #ddd;
 }
 
 .seller-items {
 	width: 100%;
-	margin: 0 auto;
 	max-width: 1920px;
+	margin: 0 auto;
 	display: flex;
 }
 
@@ -930,7 +940,8 @@ body {
 }
 
 .seller-items>div {
-	flex: 44.6% 0 0;
+	flex: 44% 0 0;
+	overflow: hidden;
 }
 
 .seller-items>div:first-child {
@@ -971,7 +982,7 @@ body {
 }
 
 .seller-conts>.seller-cont {
-	font-size: 0.875rem;
+	font-size: 0.75rem;
 	padding: 1rem 0 1.5rem 0;
 }
 
@@ -993,13 +1004,10 @@ body {
 	margin-bottom: 2rem;
 }
 
-
-
-
-/* NEW ARRIVALS */
+/* NEW ARRIVAL */
 .arrivals {
-	background-color: #f8f8f8;
 	padding: 5rem 0;
+	background-color: #f8f8f8;
 }
 
 .arrival-items {
@@ -1047,7 +1055,7 @@ body {
 .arrival-item>.arrival-cont {
 	top: 55%;
 	left: 15%;
-	font-size: 0.75;
+	font-size: 0.75rem;
 	font-weight: normal;
 }
 
@@ -1076,7 +1084,6 @@ body {
 
 .arrival-item:hover>.arrival-bt {
 	opacity: 1;
-	display: block;
 	top: 75%;
 }
 
@@ -1084,12 +1091,19 @@ body {
 .choices {
 	margin-top: 5rem;
 }
+.choices > .seller-prds > :not(:first-child) {
+	display: none;
+}
+
+.choice-wrap {
+	overflow: hidden;
+}
 
 .choice-navis {
 	display: flex;
+	justify-content: center;
 	color: #969696;
 	text-align: center;
-	justify-content: center;
 	font-size: 1.25rem;
 	margin-bottom: 3rem;
 }
@@ -1128,14 +1142,14 @@ body {
 
 .post-desc>.tit {
 	color: #111;
+	font-size: 1.25rem;
 	margin-bottom: 0.75rem;
-	font-size: 1rem;
 }
 
 .post-desc>.date {
 	color: #aaa;
 	font-size: 0.875rem;
-	margin-bottom: 1rem;
+	margin-bottom: 1.25rem;
 }
 
 .post-desc>.desc {
@@ -1143,20 +1157,20 @@ body {
 	font-size: 0.75rem;
 }
 
+
 /* BRANDS */
 .brands {
 	border-top: 1px solid #ccc;
 	padding: 2rem 0;
 }
-
+.brand-wrap {
+	overflow: hidden;
+}
 .brand-items {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-}
-
-.brand-item {
-	flex: 18 0 0%;
+	position: relative;
 }
 
 /* INSTAS */
@@ -1186,12 +1200,14 @@ body {
 }
 
 .insta-item {
-	flex: 19% 0 0;
+	flex: 20% 0 1;
 }
 
 .insta-bts {
 	margin-top: 2rem;
 }
+#insta-prev {transform: translateX(-15px);}
+#insta-next {transform: translateX(15px);}
 
 /* footer */
 footer {
@@ -1285,27 +1301,27 @@ footer a:active {
 }
 
 .sns-brand>li:nth-child(1):hover {
-	background-color: #3b5998;
+	background-color: #3b5998
 }
 
 .sns-brand>li:nth-child(2):hover {
-	background-color: #55acee;
+	background-color: #55acee
 }
 
 .sns-brand>li:nth-child(3):hover {
-	background-color: #dd4b39;
+	background-color: #dd4b39
 }
 
 .sns-brand>li:nth-child(4):hover {
-	background-color: #497299;
+	background-color: #497299
 }
 
 .sns-brand>li:nth-child(5):hover {
-	background-color: #cb2027;
+	background-color: #cb2027
 }
 
 .sns-brand>li:nth-child(6):hover {
-	background-color: #f4e24c;
+	background-color: #f4e24c
 }
 
 .sns-like {
@@ -1328,7 +1344,7 @@ footer a:active {
 }
 
 .sns-like>div:last-child>button:hover {
-	background-color: #21345e;
+	background-color: #2a4275;
 }
 
 .footer-email {
@@ -1348,7 +1364,7 @@ footer a:active {
 
 .footer-email>button {
 	flex: 19% 0 1;
-	width: 20%;
+	width: 19%;
 	padding: 0.5rem 0;
 	background-color: #444;
 	margin-left: 1%;
