@@ -1,36 +1,35 @@
-// 모듈 Require
+/* Express 구동 */
 const express = require("express");
 const app = express();
-const path = require("path");
 app.listen(3300, () => {
 	console.log("http://127.0.0.1:3300");
 });
 
-// 사용자 모듈 Require
+/* node_modules 참조 */
+const path = require("path");
+const fs = require("fs");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
 
-
-// 초기 Express 설정
+/* app 초기 셋팅 */
 app.locals.pretty = true;
 app.use("/", express.static(path.join(__dirname, "public")));
 // app.use("/", express.static("./public"));
+app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
-
-// 관리자 Router
-app.get(["/admin/:type", "/admin"], (req, res) => {
-	let type = req.params.type ? req.params.type : "login";
-	switch(type) {
-		case "login":
-			adminLogin(req, res);
-			break;
-		default:
-			res.send("페이지를 찾을 수 없습니다.");
-			break;
-	}
-});
+/* morgan 설정 */
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'), { flags: 'a' })
+app.use(morgan('combined', { stream: accessLogStream }))
 
 
-function adminLogin(req, res) {
-	res.render("admin/login");
-};
+/* Router */
+const frontRouter = require("./router/front");
+const adminRouter = require("./router/admin");
+const apiRouter = require("./router/api");
+const sqlRouter = require("./router/rest-sql");
+app.use("/", frontRouter);
+app.use("/admin", adminRouter);
+app.use("/api", apiRouter);
+app.use("/rest-sql", sqlRouter);
