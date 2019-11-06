@@ -19,6 +19,8 @@ const sqlExec = async (sql, sqlVals) => {
 	}
 	catch(err) {
 		console.log(error);
+		connect.release();
+		// throw new Error(error)
 	}
 }
 
