@@ -14,43 +14,35 @@ router.delete("/sql", deleteData);
 
 
 /* Router Callback */                                                                   
-function getData(req, res) {
-	(async () => {
+async function getData(req, res) {
 		let sql = "SELECT * FROM rest ORDER BY id DESC";
 		let result = await sqlExec(sql);
 		// res.json(result[0]);
 		res.render("rest/restForm", {users: result[0]});
-	})()
 }
 
 
-function postData(req, res) {
-	(async () => {
+async function postData(req, res) {
 		let username = req.body.username;
 		let sql = "INSERT INTO rest SET username=?";
 		let sqlVal = [username];
 		let result = await sqlExec(sql, sqlVal);
 		res.redirect("/rest-sql");
-	})();
 } 
 
-function putData(req, res) {
-	(async () => {
+async function putData(req, res) {
 		let sql = "UPDATE rest SET username=? WHERE id=?";
 		let sqlVal = [req.body.username, req.body.id];
 		let result = await sqlExec(sql, sqlVal);
 		res.redirect("/rest-sql");
-	})();
 }
 
-function deleteData(req, res) {
-	(async () => {
+async function deleteData(req, res) {
 		let sql = "DELETE from rest WHERE id=?"
 		let sqlVal = [req.body.id];
 		let result = await sqlExec(sql, sqlVal);
 		// console.log(result[0]);
 		(result[0].affectedRows > 0) ? res.json({code: 200}) : res.json({code: 500});
-	})();
 } 
 
 
