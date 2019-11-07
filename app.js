@@ -37,12 +37,17 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'
 app.use(morgan('combined', { stream: accessLogStream }))
 
 
-/* Router */
+/* Router - ella */
 const frontRouter = require("./router/front");
 const adminRouter = require("./router/admin");
 const apiRouter = require("./router/api");
-const sqlRouter = require("./router/rest-sql");
 app.use("/", frontRouter);
 app.use("/admin", adminRouter);
 app.use("/api", apiRouter);
+
+
+/* Router - rest */
+const sqlRouter = require("./router/rest-sql");
+const ajaxRouter = require("./router/rest-ajax");
 app.use("/rest-sql", sqlRouter);
+app.use("/rest-ajax", ajaxRouter);

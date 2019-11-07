@@ -32,8 +32,9 @@ $(".bt-up").click(function(){
 
 $(".bt-del").click(function(){
 	var id = $(this).parent().children(".sp-id").text();
-	if(confirm("정말로 삭제하시겠습니까?"));
-	ajax("rest-sql/sql", "delete", {id: id}, function(res){
-		(res.code == 200) ? location.href="/rest-sql" : alert("삭제에 실패했습니다.");
-	})
+	if(confirm("정말로 삭제하시겠습니까?")) {
+		ajax("rest-sql/sql", "delete", {id: id}, function(res){
+			(res.code == 200) ? location.href="/rest-sql" : alert("삭제에 실패했습니다.");
+		})
+	};
 });
