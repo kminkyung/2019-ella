@@ -10,13 +10,13 @@ const path = require("path");
 const fs = require("fs");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const methodOverride = require('method-override');
+const methodOverride = require("method-override");
 
 /* app 초기 셋팅 */
 app.locals.pretty = true;
 app.use("/", express.static(path.join(__dirname, "public")));
 // app.use("/", express.static("./public"));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
