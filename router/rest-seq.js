@@ -1,31 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {sequelize, Sequelize} = require("../modules/sequelize-conn");
-
-/* Model 작성 */
-const Model = Sequelize.Model;
-class Score extends Model {}
-// Sample.init({테이블정보}, {옵션});
-Score.init({
-	stdname: {type: Sequelize.STRING, allowNull: false
-	},
-	kor: {
-		type: Sequelize.TINYINT,
-		allowNull: true
-	},
-	math: {
-		type: Sequelize.TINYINT,
-		allowNull: true
-	},
-	eng: {
-		type: Sequelize.TINYINT,
-		allowNull: true
-	}
-	}, {
-		sequelize,
-		modelName: "scores"
-});
-Score.sync({force: false});
+const {Score} = require("../model/Score.js");
 
 
 /* REST */
@@ -38,20 +13,44 @@ router.delete("/", deleteData);
 
 /* Router Callback */                                                                   
 async function getData(req, res) {
-	res.render("rest/seqForm");
+	let result = await Score.findAll({
+		order: [['id', 'DESC']]
+	});
+	res.render("rest/seqForm", {datas: result});
 }
 
 
 async function postData(req, res) {
-
+	let result = await Score.create({
+		stdname: req.body.stdname,
+		kor: req.body.kor,
+		math: req.body.math,
+		eng: req.body.eng
+	});
+	res.redirect("/rest-seq");
 } 
 
 async function putData(req, res) {
-
+	let result = await Score.update({
+		stdname: req.body.stdname,
+		kor: req.body.kor,
+		math: req.body.math,
+		eng: req.body.eng
+	}, {
+		where: {
+			id: req.body.id
+		}
+	});
+	res.redirect("/rest-seq");
 }
 
 async function deleteData(req, res) {
-
+	let result = await Score.destroy({
+		where: {
+			id: req.body.id
+		}
+	});
+	res.json(result);
 } 
 
 
