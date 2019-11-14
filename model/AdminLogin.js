@@ -21,13 +21,7 @@ AdminLogin.init({
 		modelName: "admins"
 });
 
-(async () => {
-	const result = await AdminLogin.sync({force: false});
-	AdminLogin.create({
-		adminID: "minkyung",
-		adminPW: "1234",
-		grade: 9
-	})
-});
+// sync() method를 최초 한번 실행하여 테이블이 생성되면 주석처리하여 더 이상 쓸 필요가 없다.
+// AdminLogin.sync({force: false});
 
 module.exports = {AdminLogin};

@@ -8,7 +8,7 @@ router.post("/", postData);
 
 
 
-/* Router Callback */                                                                   
+/* Router Callback */                                                   
 async function postData(req, res) {
 	let result = await AdminLogin.findAll({
 		where: {
@@ -16,6 +16,10 @@ async function postData(req, res) {
 			adminPW: req.body.adminPW
 		}
 	});
+	if(result.length == 1 && result[0].grade > 1) {
+		res.render("admin/main.pug", result[0]);
+	}
+	else()
 	res.json(result);
 }
 
