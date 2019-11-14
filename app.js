@@ -12,6 +12,10 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 
+/* modules */
+
+
+
 /* app 초기 셋팅 */
 app.locals.pretty = true;
 app.use("/", express.static(path.join(__dirname, "public")));

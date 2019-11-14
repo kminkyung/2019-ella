@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const path = require("path");
 const {AdminLogin} = require("../model/AdminLogin.js");
-
+const util = require(path.join(__dirname, "../modules/util"));
 
 /* REST */
 router.post("/", postData);
-
 
 
 /* Router Callback */                                                   
@@ -16,11 +16,8 @@ async function postData(req, res) {
 			adminPW: req.body.adminPW
 		}
 	});
-	if(result.length == 1 && result[0].grade > 1) {
-		res.render("admin/main.pug", result[0]);
-	}
-	else()
-	res.json(result);
+	if(result.length == 1 && result[0].grade > 1) res.render("admin/main.pug", result[0]);
+	else res.send(util.alertAdmin());
 }
 
 
