@@ -16,7 +16,7 @@ async function postData(req, res) {
 			adminPW: req.body.adminPW
 		}
 	});
-	if(result.length == 1 && result[0].grade > 1) res.render("admin/main.pug", result[0]);
+	if(result.length == 1 && result[0].grade > 1) res.render("admin/main.pug",{leftNavs:[]});
 	else res.send(util.alertAdmin());
 }
 
