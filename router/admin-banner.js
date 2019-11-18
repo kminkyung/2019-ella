@@ -9,7 +9,7 @@ const util = require(path.join(__dirname, "../modules/util"));
 router.get("/:type", getData);
 
 
-/* Router Callback */                                                   
+/* Router Callback */
 async function getData(req, res) {
 	let type = req.params.type;
 	let vals = {
