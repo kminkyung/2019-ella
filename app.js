@@ -18,6 +18,7 @@ const methodOverride = require("method-override");
 
 /* app 초기 셋팅 */
 app.locals.pretty = true;
+app.use(bodyParser.json());
 app.use("/", express.static(path.join(__dirname, "public")));
 // app.use("/", express.static("./public"));
 app.use(bodyParser.urlencoded({extended: false}));
