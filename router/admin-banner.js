@@ -10,10 +10,10 @@ const util = require(path.join(__dirname, "../modules/util"));
 router.get("/:type", getData);
 router.post("/:type", mt.upload.single("src"), postData);
 router.delete("/:type", deleteData);
-
+router.put(":type", putData);
 
 /* Router Callback */
-async function getData(req, res) {
+async function getData(req, res, next) {
 	let type = req.params.type;
 	let vals = {
 		leftNavs: [
@@ -28,11 +28,18 @@ async function getData(req, res) {
 	}
 	switch(type) {
 		case "top":
-			let result = await AdminBanner.findAll({
-				order: [["id", "desc"]],
-			});
-			vals.lists = result;
-			res.render("admin/bannerTop", vals);
+			let result;
+			if(req.query.id) {
+				result = await AdminBanner.findOne({where: {id: req.query.id}});
+				res.json(result);
+			}
+			else {
+				result = await AdminBanner.findAll({
+					order: [["id", "desc"]],
+				});
+				vals.lists = result;
+				res.render("admin/bannerTop", vals);
+			}
 			break;
 		case "bottom":
 			res.render("admin/bannerBottom", vals);
@@ -63,11 +70,15 @@ async function deleteData(req, res, next) {
 	let id = req.body.id;
 	try {
 		let result = await AdminBanner.destroy({where: {id}});
-	 	res.redirect("admin/banner/"+type);
+	 	res.redirect("/admin/banner/"+type);
 	}
 	catch(error) {
-
+		next(error);
 	}
+}
+
+async function putData(req, res, next) {
+	res.send("저장되었습니다.")
 }
 
 module.exports = router;

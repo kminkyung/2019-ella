@@ -12,7 +12,7 @@ router.delete("/", deleteData);
 
 
 /* Router Callback */                                                                   
-async function getData(req, res) {
+async function getData(req, res, next) {
 	let result = await Score.findAll({
 		order: [['id', 'DESC']]
 	});
@@ -20,7 +20,7 @@ async function getData(req, res) {
 }
 
 
-async function postData(req, res) {
+async function postData(req, res, next) {
 	let result = await Score.create({
 		stdname: req.body.stdname,
 		kor: req.body.kor,
@@ -30,7 +30,7 @@ async function postData(req, res) {
 	res.redirect("/rest-seq");
 } 
 
-async function putData(req, res) {
+async function putData(req, res, next) {
 	let result = await Score.update({
 		stdname: req.body.stdname,
 		kor: req.body.kor,
@@ -44,7 +44,7 @@ async function putData(req, res) {
 	res.redirect("/rest-seq");
 }
 
-async function deleteData(req, res) {
+async function deleteData(req, res, next) {
 	let result = await Score.destroy({
 		where: {
 			id: req.body.id

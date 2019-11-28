@@ -14,7 +14,7 @@ router.delete("/sql", deleteData);
 
 
 /* Router Callback */                                                                   
-async function getData(req, res) {
+async function getData(req, res, next) {
 		let sql = "SELECT * FROM rest ORDER BY id DESC";
 		let result = await sqlExec(sql);
 		// res.json(result[0]);
@@ -22,7 +22,7 @@ async function getData(req, res) {
 }
 
 
-async function postData(req, res) {
+async function postData(req, res, next) {
 		let username = req.body.username;
 		let sql = "INSERT INTO rest SET username=?";
 		let sqlVal = [username];
@@ -30,14 +30,14 @@ async function postData(req, res) {
 		res.redirect("/rest-sql");
 } 
 
-async function putData(req, res) {
+async function putData(req, res, next) {
 		let sql = "UPDATE rest SET username=? WHERE id=?";
 		let sqlVal = [req.body.username, req.body.id];
 		let result = await sqlExec(sql, sqlVal);
 		res.redirect("/rest-sql");
 }
 
-async function deleteData(req, res) {
+async function deleteData(req, res, next) {
 		let sql = "DELETE from rest WHERE id=?"
 		let sqlVal = [req.body.id];
 		let result = await sqlExec(sql, sqlVal);
