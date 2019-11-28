@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const mt = require("../modules/multer-conn");
 const path = require("path");
 const {AdminBanner} = require("../model/AdminBanner.js");
 const util = require(path.join(__dirname, "../modules/util"));
@@ -7,6 +8,8 @@ const util = require(path.join(__dirname, "../modules/util"));
 
 /* REST */
 router.get("/:type", getData);
+router.post("/:type", mt.upload.single("src"), postData);
+router.delete("/:type", deleteData);
 
 
 /* Router Callback */
@@ -25,6 +28,10 @@ async function getData(req, res) {
 	}
 	switch(type) {
 		case "top":
+			let result = await AdminBanner.findAll({
+				order: [["id", "desc"]],
+			});
+			vals.lists = result;
 			res.render("admin/bannerTop", vals);
 			break;
 		case "bottom":
@@ -36,5 +43,31 @@ async function getData(req, res) {
 	}
 }
 
+async function postData(req, res, next) {
+	let type = req.params.type;
+	let title = req.body.title;
+	let position = req.body.position;
+	let link = req.body.link;
+	let desc = req.body.desc;
+	let src = "";
+	if(req.file) src = req.file.filename;
+	let result = await AdminBanner.create({
+		title, position, link, desc, src
+	});
+	res.redirect("/admin/banner/"+type);
+
+}
+
+async function deleteData(req, res, next) {
+	let type = req.params.type;
+	let id = req.body.id;
+	try {
+		let result = await AdminBanner.destroy({where: {id}});
+	 	res.redirect("admin/banner/"+type);
+	}
+	catch(error) {
+
+	}
+}
 
 module.exports = router;
