@@ -17,6 +17,7 @@ function chgData(id) {
 			$f.find(".src-name").html(res.src);
 			$f.find(".btn-primary").addClass("btn-success").removeClass("btn-primary").html("수정");
 			$f.attr("action", "/admin/banner/top/"+res.id);
+			$(".conts").scrollTop(0);
 		},
 		error(xhr, status, error) {
 			console.log(xhr, status, error);
