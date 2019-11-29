@@ -89,13 +89,15 @@ $.ajax({
 			html += '</li>';
 		}
 		$(".main-ban").append(html);
-		new FxSlide({
-			slides: $(".main-ban"), 
-			cnt: 1, 
-			speed: 1000,
-			delay: 4000,
-			pager: $(".pagers")
-		});		
+		$(".main-ban").imagesLoaded(function() {
+			new FxSlide({
+				slides: $(".main-ban"), 
+				cnt: 1, 
+				speed: 1000,
+				delay: 4000,
+				pager: $(".pagers")
+			});		
+		});
 		// html += '<ul class="ban-conts lt20">';
 		// html += '<li class="ban-tit">COSMOPOLIS</li>';
 		// html += '<li class="ban-bar"></li>';
