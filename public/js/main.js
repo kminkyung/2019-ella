@@ -62,13 +62,53 @@ $(".navi-show").mouseleave(function(){
 });
 
 // fx-slide : 메인 배너
-new FxSlide({
-	slides: $(".main-ban"), 
-	cnt: 1, 
-	speed: 1000,
-	delay: 4000,
-	pager: $(".pagers")
-});
+/* 
+<li>
+	<img src="../img/slide-img/slideshow-1-compressor.jpg" alt="메인배너" class="img">
+	<ul class="ban-conts lt20">
+		<li class="ban-tit">COSMOPOLIS</li>
+		<li class="ban-bar"></li>
+		<li class="ban-cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+			consectetur adipisicing elit.</li>
+		<li class="ban-bt">
+			<span class="bt-ban-link bt-rev">SHOP THE COLLECTION</span>
+		</li>
+	</ul>
+</li>
+*/
+$.ajax({
+	url: "/api/ban/main",
+	success: function(res){
+		var html = '';
+		var folder = '';
+		for(var i in res) {
+			var folder = findPath(new Date(Number(res[i].src.split("-")[0])));
+			html += '<li>';
+			html += '<img src="/uploads/'+folder+'/'+res[i].src+'" alt="메인배너" class="img">';
+			if(res[i].desc != "") html += res[i].desc;
+			html += '</li>';
+		}
+		$(".main-ban").append(html);
+		new FxSlide({
+			slides: $(".main-ban"), 
+			cnt: 1, 
+			speed: 1000,
+			delay: 4000,
+			pager: $(".pagers")
+		});		
+		// html += '<ul class="ban-conts lt20">';
+		// html += '<li class="ban-tit">COSMOPOLIS</li>';
+		// html += '<li class="ban-bar"></li>';
+		// html += '<li class="ban-cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>';
+		// html += '<li class="ban-bt">';
+		// html += '<span class="bt-ban-link bt-rev">SHOP THE COLLECTION</span>';
+		// html += '</li>';
+		// html += '</ul>';
+	}
+})
+
+
+// fx-slide : 서브 배너
 new FxSlide({
 	slides: $(".best-items"), 
 	cnt: 5, 

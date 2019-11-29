@@ -16,6 +16,13 @@ const methodOverride = require("method-override");
 const createError = require('http-errors');
 const util = require(path.join(__dirname, "modules/util"));
 
+/* Express */
+app.locals.pretty = true;
+app.use("/", express.static(path.join(__dirname, "public")));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
 
 /* method-override 설정 */
 app.use(methodOverride('X-HTTP-Method'));
@@ -34,16 +41,6 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'
 app.use(morgan('combined', { stream: accessLogStream }))
 
 
-/* Express */
-app.locals.pretty = true;
-app.use(bodyParser.json());
-app.use("/", express.static(path.join(__dirname, "public")));
-// app.use("/", express.static("./public"));
-app.use(bodyParser.urlencoded({extended: false}));
-app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "views"));
-// app.use(express.multipart());
-// app.use(express.methodOverride());
 
 
 /* Router - ella */

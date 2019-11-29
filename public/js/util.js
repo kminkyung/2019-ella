@@ -179,7 +179,8 @@ function splitName(file) {
 	return obj;
 }
 
-function findPath(d) {
+// 사용예 findPath(new Date(Number(res[i].src.split("-")[0])));
+function findPath(newDateNumber) {
 	var year = String(d.getFullYear()).substr(2);
 	var month = d.getMonth() + 1; // 어차피 String인 year를 더할 것이므로 (숫자+문자=문자) String()을 하지 않았다.
 	if(month < 10) month = "0" + month; // 1~12 만들기, 만약 9가 10보다 작으면 0을 붙이고 month에 1을 더한다. 

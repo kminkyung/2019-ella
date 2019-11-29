@@ -2,7 +2,7 @@ extends ../layout/admin/layout-main.pug
 block content
   h2 상단 배너 관리
   h3.my-3.wr-title - 배너등록
-  form(name="bannerTopForm" action="/admin/banner/top" method="post")
+  form(name="bannerTopForm" action="/admin/banner/top" method="post" enctype="multipart/form-data")
     input(type="hidden" name="_method" value="post")
     input(type="hidden" name="id" value="")
     table.table
