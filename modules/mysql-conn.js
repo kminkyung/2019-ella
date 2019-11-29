@@ -1,10 +1,13 @@
 const mysql = require("mysql2/promise"); // async-await 쓰기 위해
 const pool = mysql.createPool({
-	host: "localhost",
+	host: "db.minkyung.gabia.io",
 	port: 3306,
-	user: "ella",
-	password: "000000",
-	database: "ella",
+	user: "minkyung",
+	// user: "ella",
+	password: "mkm4167!!!",
+	// password: "000000",
+	database: "dbminkyung",
+	// database: "ella",
 	connectionLimit: 10,
 	waitForConnections: true
 });

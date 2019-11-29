@@ -1,8 +1,8 @@
 /* Express 구동 */
 const express = require("express");
 const app = express();
-app.listen(3300, () => {
-	console.log("http://127.0.0.1:3300");
+app.listen(8080, () => {
+	console.log("http://127.0.0.1:8080");
 });
 
 /* node_modules 참조 */

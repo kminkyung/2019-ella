@@ -1,11 +1,14 @@
 // npm i sequelize sequelize-cli mysql mysql2
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize({
-	host: "localhost",
+	host: "db.minkyung.gabia.io",
+	username: "minkyung",
 	port: 3306,
-	database: "ella",
-	username: "ella",
-	password: "000000",
+	// user: "ella",
+	password: "mkm4167!!!",
+	// password: "000000",
+	database: "dbminkyung",
+	// database: "ella",
 	dialect: "mysql",
 	pool: {
 		max: 10,
